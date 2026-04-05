@@ -1,0 +1,44 @@
+digraph safe_str_concat_cfg {
+  rankdir=TB;
+  node [shape=box, style="rounded,filled", fillcolor="#FFF2CC", color="#666666", fontname="Arial"];
+  start [shape=ellipse, fillcolor="#D9EAD3", label="Start"];
+  d1 [shape=diamond, fillcolor="#CFE2F3", label="dst==NULL || src==NULL || dst_size==0 ?"];
+  retm1a [shape=box, fillcolor="#F4CCCC", label="return -1"];
+  init [label="dlen = 0"];
+  d2 [shape=diamond, fillcolor="#CFE2F3", label="dlen < dst_size && dst[dlen] != '\\0' ?"];
+  inc [label="dlen++"];
+  d3 [shape=diamond, fillcolor="#CFE2F3", label="dlen == dst_size ?"];
+  d4 [shape=diamond, fillcolor="#CFE2F3", label="dlen + 1 == dst_size ?"];
+  retfull [shape=box, fillcolor="#FCE5CD", label="return src[0]=='\\0' ? 0 : 1"];
+  initi [label="i = 0"];
+  d5 [shape=diamond, fillcolor="#CFE2F3", label="(dlen + 1) < dst_size && src[i] != '\\0' ?"];
+  append [label="dst[dlen]=src[i]; dlen++; i++"];
+  nul [label="dst[dlen]='\\0'"];
+  d6 [shape=diamond, fillcolor="#CFE2F3", label="src[i] != '\\0' ?"];
+  ret1 [shape=box, fillcolor="#FCE5CD", label="return 1"];
+  ret0 [shape=box, fillcolor="#D9EAD3", label="return 0"];
+  end [shape=ellipse, fillcolor="#D9EAD3", label="End"];
+
+  start -> d1;
+  d1 -> retm1a [label="True"];
+  retm1a -> end;
+  d1 -> init [label="False"];
+  init -> d2;
+  d2 -> inc [label="True"];
+  inc -> d2;
+  d2 -> d3 [label="False"];
+  d3 -> retm1a [label="True"];
+  d3 -> d4 [label="False"];
+  d4 -> retfull [label="True"];
+  retfull -> end;
+  d4 -> initi [label="False"];
+  initi -> d5;
+  d5 -> append [label="True"];
+  append -> d5;
+  d5 -> nul [label="False"];
+  nul -> d6;
+  d6 -> ret1 [label="True"];
+  d6 -> ret0 [label="False"];
+  ret1 -> end;
+  ret0 -> end;
+}

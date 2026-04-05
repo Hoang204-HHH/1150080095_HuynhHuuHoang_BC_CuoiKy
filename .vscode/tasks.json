@@ -1,0 +1,158 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Project: Doctor",
+      "type": "shell",
+      "command": "npm run doctor",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: Dry Run",
+      "type": "shell",
+      "command": "npm run test:dry",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: Run ALL",
+      "type": "shell",
+      "command": "npm run test:all",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC01 SafeCopy_Normal",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC01",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC02 SafeCopy_ExactFit",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC02",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC03 SafeCopy_Truncate",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC03",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC04 SafeCopy_EmptySource",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC04",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC05 SafeCopy_DstSize1",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC05",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC06 SafeCopy_NullDst",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC06",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC07 SafeCopy_NullSrc",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC07",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC08 SafeCopy_SizeZero",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC08",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC09 SafeConcat_Basic",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC09",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC10 SafeConcat_ExactFit",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC10",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC11 SafeConcat_Truncate",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC11",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC12 SafeConcat_DstFull",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC12",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC13 SafeConcat_EmptyStrings",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC13",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC14 SafeConcat_UnterminatedDst",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC14",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC15 SafeConcat_NullDst",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC15",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC16 SafeConcat_NullSrc",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC16",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC17 SafeConcat_SizeZero",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC17",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC18 Integration_SafeCopy_Then_Concat",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC18",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC19 UnsafeCopy_Overflow",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC19",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC20 BuggyCopy_OffByOne",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC20",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC21 NoNullTerminate_Observation",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC21",
+      "problemMatcher": []
+    },
+    {
+      "label": "CBMC: TC22 UnsafeConcat_Overflow",
+      "type": "shell",
+      "command": "node automation/scripts/run-cbmc.js --id TC22",
+      "problemMatcher": []
+    }
+  ]
+}

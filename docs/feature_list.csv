@@ -1,0 +1,5 @@
+﻿Mã,Tên chức năng,Mô tả,Độ ưu tiên
+F-01,safe_str_copy,"Sao chép chuỗi an toàn, luôn chừa chỗ cho ký tự \0 và trả mã truncation khi cần.",Cao
+F-02,safe_str_concat,"Nối chuỗi an toàn, không đọc/ghi ngoài biên và từ chối dst không hợp lệ.",Cao
+F-03,Automation runner,Tự động chạy CBMC cho toàn bộ suite và sinh CSV/JSON/log.,Cao
+F-04,Bug demonstration,"Tái hiện 3 defect điển hình: unsafe copy overflow, off-by-one, unsafe concat overflow.",Cao

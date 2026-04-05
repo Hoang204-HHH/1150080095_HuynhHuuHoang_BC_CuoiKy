@@ -1,0 +1,423 @@
+[
+  {
+    "id": "TC01",
+    "name": "SafeCopy_Normal",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Functional / White-box",
+    "technique": "EP + Statement/Branch",
+    "harness": "tc01_safe_copy_normal.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Ca hợp lệ cơ bản cho safe_str_copy."
+  },
+  {
+    "id": "TC02",
+    "name": "SafeCopy_ExactFit",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Functional / White-box",
+    "technique": "BVA + Branch",
+    "harness": "tc02_safe_copy_exact_fit.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Biên trên vừa khít của safe_str_copy."
+  },
+  {
+    "id": "TC03",
+    "name": "SafeCopy_Truncate",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Functional / White-box",
+    "technique": "EP + BVA + Branch",
+    "harness": "tc03_safe_copy_truncate.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Nhánh truncation an toàn."
+  },
+  {
+    "id": "TC04",
+    "name": "SafeCopy_EmptySource",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Functional / White-box",
+    "technique": "EP + Branch",
+    "harness": "tc04_safe_copy_empty_src.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "Medium",
+    "note": "src rỗng."
+  },
+  {
+    "id": "TC05",
+    "name": "SafeCopy_DstSize1",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Boundary",
+    "technique": "BVA",
+    "harness": "tc05_safe_copy_dst_size_1.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst_size = 1."
+  },
+  {
+    "id": "TC06",
+    "name": "SafeCopy_NullDst",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Negative",
+    "technique": "EP",
+    "harness": "tc06_safe_copy_null_dst.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst = NULL."
+  },
+  {
+    "id": "TC07",
+    "name": "SafeCopy_NullSrc",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Negative",
+    "technique": "EP",
+    "harness": "tc07_safe_copy_null_src.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "src = NULL."
+  },
+  {
+    "id": "TC08",
+    "name": "SafeCopy_SizeZero",
+    "module": "string_utils.c::safe_str_copy",
+    "type": "Negative",
+    "technique": "EP + BVA",
+    "harness": "tc08_safe_copy_size_zero.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst_size = 0."
+  },
+  {
+    "id": "TC09",
+    "name": "SafeConcat_Basic",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Functional / White-box",
+    "technique": "EP + Statement/Branch",
+    "harness": "tc09_safe_concat_basic.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Nối chuỗi khi còn đủ chỗ."
+  },
+  {
+    "id": "TC10",
+    "name": "SafeConcat_ExactFit",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Boundary",
+    "technique": "BVA + Branch",
+    "harness": "tc10_safe_concat_exact_fit.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Biên vừa khít của concat."
+  },
+  {
+    "id": "TC11",
+    "name": "SafeConcat_Truncate",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Functional / White-box",
+    "technique": "EP + BVA + Branch",
+    "harness": "tc11_safe_concat_truncate.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Truncation an toàn khi concat."
+  },
+  {
+    "id": "TC12",
+    "name": "SafeConcat_DstFull",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Boundary",
+    "technique": "BVA",
+    "harness": "tc12_safe_concat_dst_full.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst đã đầy."
+  },
+  {
+    "id": "TC13",
+    "name": "SafeConcat_EmptyStrings",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Functional",
+    "technique": "EP",
+    "harness": "tc13_safe_concat_empty_strings.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "Medium",
+    "note": "dst và src cùng rỗng."
+  },
+  {
+    "id": "TC14",
+    "name": "SafeConcat_UnterminatedDst",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Negative",
+    "technique": "EP + Branch",
+    "harness": "tc14_safe_concat_unterminated_dst.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst không có null trong phạm vi buffer."
+  },
+  {
+    "id": "TC15",
+    "name": "SafeConcat_NullDst",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Negative",
+    "technique": "EP",
+    "harness": "tc15_safe_concat_null_dst.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst = NULL."
+  },
+  {
+    "id": "TC16",
+    "name": "SafeConcat_NullSrc",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Negative",
+    "technique": "EP",
+    "harness": "tc16_safe_concat_null_src.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "src = NULL."
+  },
+  {
+    "id": "TC17",
+    "name": "SafeConcat_SizeZero",
+    "module": "string_utils.c::safe_str_concat",
+    "type": "Negative",
+    "technique": "EP + BVA",
+    "harness": "tc17_safe_concat_size_zero.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "dst_size = 0."
+  },
+  {
+    "id": "TC18",
+    "name": "Integration_SafeCopy_Then_Concat",
+    "module": "workflow::safe_copy_then_concat",
+    "type": "Integration",
+    "technique": "Workflow / White-box",
+    "harness": "tc18_integration_safe_copy_then_concat.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "High",
+    "note": "Luồng copy rồi concat."
+  },
+  {
+    "id": "TC19",
+    "name": "UnsafeCopy_Overflow",
+    "module": "string_utils.c::unsafe_str_copy",
+    "type": "Security-oriented / Defect demo",
+    "technique": "White-box defect exposure",
+    "harness": "tc19_unsafe_copy_overflow.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64",
+      "--trace"
+    ],
+    "expectedVerification": "VERIFICATION FAILED",
+    "qaStatus": "Fail",
+    "priority": "Critical",
+    "note": "Ca lỗi có chủ đích: copy vượt biên."
+  },
+  {
+    "id": "TC20",
+    "name": "BuggyCopy_OffByOne",
+    "module": "string_utils.c::buggy_copy_off_by_one",
+    "type": "Security-oriented / Defect demo",
+    "technique": "White-box defect exposure",
+    "harness": "tc20_buggy_off_by_one.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64",
+      "--trace"
+    ],
+    "expectedVerification": "VERIFICATION FAILED",
+    "qaStatus": "Fail",
+    "priority": "Critical",
+    "note": "Ca lỗi có chủ đích: off-by-one."
+  },
+  {
+    "id": "TC21",
+    "name": "NoNullTerminate_Observation",
+    "module": "string_utils.c::no_null_terminate_copy",
+    "type": "Design observation",
+    "technique": "White-box observation",
+    "harness": "tc21_no_null_copy_observation.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64"
+    ],
+    "expectedVerification": "VERIFICATION SUCCESSFUL",
+    "qaStatus": "Pass",
+    "priority": "Medium",
+    "note": "Quan sát buffer không có null, nhưng không gọi unsafe_strlen."
+  },
+  {
+    "id": "TC22",
+    "name": "UnsafeConcat_Overflow",
+    "module": "string_utils.c::unsafe_str_concat",
+    "type": "Security-oriented / Defect demo",
+    "technique": "White-box defect exposure",
+    "harness": "tc22_unsafe_concat_overflow.c",
+    "source": "src/string_utils.c",
+    "cbmcArgs": [
+      "--bounds-check",
+      "--pointer-check",
+      "--unwind",
+      "64",
+      "--trace"
+    ],
+    "expectedVerification": "VERIFICATION FAILED",
+    "qaStatus": "Fail",
+    "priority": "Critical",
+    "note": "Ca lỗi có chủ đích: concat vượt biên."
+  }
+]

@@ -1,0 +1,27 @@
+digraph test_process {
+  rankdir=TB;
+  splines=ortho;
+  node [shape=box, style="rounded,filled", fillcolor="#FFF2CC", color="#666666", fontname="Arial"];
+
+  a [shape=ellipse, fillcolor="#D9EAD3", label="Bắt đầu"];
+  b [label="Đọc yêu cầu / xác định phạm vi"];
+  c [label="Thiết kế testcase\n(black-box + white-box)"];
+  d [label="Map yêu cầu ↔ testcase\n(Traceability Matrix)"];
+  e [label="Viết CBMC harness\ntrong thư mục tests/"];
+  f [label="Chạy automation runner\nnpm run test:all"];
+  g [shape=diamond, fillcolor="#CFE2F3", label="CBMC trả về\nSUCCESSFUL hay FAILED?"];
+  h [label="Đối chiếu với\nExpected Verification"];
+  i [shape=diamond, fillcolor="#CFE2F3", label="Kết quả có khớp mong đợi?"];
+  j [label="Đánh dấu testcase Pass\nvà cập nhật report"];
+  k [label="Đánh dấu testcase Fail\nvà phân tích nguyên nhân"];
+  l [label="Lập Bug Report\nnếu là lỗi không mong đợi"];
+  m [label="Tổng hợp coverage,\nexecution report, kết luận"];
+  n [shape=ellipse, fillcolor="#D9EAD3", label="Kết thúc"];
+
+  a -> b -> c -> d -> e -> f -> g -> h -> i;
+  i -> j [label="Có"];
+  i -> k [label="Không"];
+  k -> l -> m;
+  j -> m;
+  m -> n;
+}

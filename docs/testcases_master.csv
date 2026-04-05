@@ -1,0 +1,23 @@
+﻿TC ID,Tên TC,Module,Điều kiện tiên quyết,Bước thực hiện,Dữ liệu đầu vào,Kết quả mong đợi,Kết quả QA mong đợi,Trang thái thiết kế
+TC01,SafeCopy_Normal,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc01_safe_copy_normal.c,Ca hợp lệ cơ bản cho safe_str_copy.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC02,SafeCopy_ExactFit,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc02_safe_copy_exact_fit.c,Biên trên vừa khít của safe_str_copy.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC03,SafeCopy_Truncate,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc03_safe_copy_truncate.c,Nhánh truncation an toàn.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC04,SafeCopy_EmptySource,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc04_safe_copy_empty_src.c,src rỗng.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC05,SafeCopy_DstSize1,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc05_safe_copy_dst_size_1.c,dst_size = 1.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC06,SafeCopy_NullDst,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc06_safe_copy_null_dst.c,dst = NULL.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC07,SafeCopy_NullSrc,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc07_safe_copy_null_src.c,src = NULL.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC08,SafeCopy_SizeZero,string_utils.c::safe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc08_safe_copy_size_zero.c,dst_size = 0.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC09,SafeConcat_Basic,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc09_safe_concat_basic.c,Nối chuỗi khi còn đủ chỗ.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC10,SafeConcat_ExactFit,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc10_safe_concat_exact_fit.c,Biên vừa khít của concat.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC11,SafeConcat_Truncate,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc11_safe_concat_truncate.c,Truncation an toàn khi concat.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC12,SafeConcat_DstFull,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc12_safe_concat_dst_full.c,dst đã đầy.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC13,SafeConcat_EmptyStrings,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc13_safe_concat_empty_strings.c,dst và src cùng rỗng.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC14,SafeConcat_UnterminatedDst,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc14_safe_concat_unterminated_dst.c,dst không có null trong phạm vi buffer.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC15,SafeConcat_NullDst,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc15_safe_concat_null_dst.c,dst = NULL.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC16,SafeConcat_NullSrc,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc16_safe_concat_null_src.c,src = NULL.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC17,SafeConcat_SizeZero,string_utils.c::safe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc17_safe_concat_size_zero.c,dst_size = 0.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC18,Integration_SafeCopy_Then_Concat,workflow::safe_copy_then_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc18_integration_safe_copy_then_concat.c,Luồng copy rồi concat.,VERIFICATION SUCCESSFUL,Pass,Ready
+TC19,UnsafeCopy_Overflow,string_utils.c::unsafe_str_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc19_unsafe_copy_overflow.c,Ca lỗi có chủ đích: copy vượt biên.,VERIFICATION FAILED,Fail,Ready
+TC20,BuggyCopy_OffByOne,string_utils.c::buggy_copy_off_by_one,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc20_buggy_off_by_one.c,Ca lỗi có chủ đích: off-by-one.,VERIFICATION FAILED,Fail,Ready
+TC21,NoNullTerminate_Observation,string_utils.c::no_null_terminate_copy,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc21_no_null_copy_observation.c,"Quan sát buffer không có null, nhưng không gọi unsafe_strlen.",VERIFICATION SUCCESSFUL,Pass,Ready
+TC22,UnsafeConcat_Overflow,string_utils.c::unsafe_str_concat,Đã cài CBMC và mở project đúng thư mục,Chạy lệnh cbmc cho tc22_unsafe_concat_overflow.c,Ca lỗi có chủ đích: concat vượt biên.,VERIFICATION FAILED,Fail,Ready

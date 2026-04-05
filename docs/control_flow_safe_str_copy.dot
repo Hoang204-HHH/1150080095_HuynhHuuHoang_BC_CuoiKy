@@ -1,0 +1,29 @@
+digraph safe_str_copy_cfg {
+  rankdir=TB;
+  node [shape=box, style="rounded,filled", fillcolor="#FFF2CC", color="#666666", fontname="Arial"];
+  start [shape=ellipse, fillcolor="#D9EAD3", label="Start"];
+  d1 [shape=diamond, fillcolor="#CFE2F3", label="dst==NULL || src==NULL || dst_size==0 ?"];
+  retm1 [shape=box, fillcolor="#F4CCCC", label="return -1"];
+  init [label="i = 0"];
+  d2 [shape=diamond, fillcolor="#CFE2F3", label="i+1 < dst_size && src[i] != '\\0' ?"];
+  copy [label="dst[i] = src[i]; i++"];
+  nul [label="dst[i] = '\\0'"];
+  d3 [shape=diamond, fillcolor="#CFE2F3", label="src[i] != '\\0' ?"];
+  ret1 [shape=box, fillcolor="#FCE5CD", label="return 1"];
+  ret0 [shape=box, fillcolor="#D9EAD3", label="return 0"];
+  end [shape=ellipse, fillcolor="#D9EAD3", label="End"];
+
+  start -> d1;
+  d1 -> retm1 [label="True"];
+  retm1 -> end;
+  d1 -> init [label="False"];
+  init -> d2;
+  d2 -> copy [label="True"];
+  copy -> d2;
+  d2 -> nul [label="False"];
+  nul -> d3;
+  d3 -> ret1 [label="True"];
+  d3 -> ret0 [label="False"];
+  ret1 -> end;
+  ret0 -> end;
+}

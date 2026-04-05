@@ -1,0 +1,18 @@
+[
+  {
+    "TC ID": "TC19",
+    "Tên TC": "UnsafeCopy_Overflow",
+    "Module": "string_utils.c::unsafe_str_copy",
+    "Loại test": "Security-oriented / Defect demo",
+    "Kỹ thuật": "White-box defect exposure",
+    "Kỳ vọng CBMC": "VERIFICATION FAILED",
+    "Kết quả thực tế": "VERIFICATION FAILED",
+    "Trạng thái TC": "Fail",
+    "Khớp kỳ vọng kỹ thuật": "Có",
+    "Exit code": 10,
+    "Log file": "output/logs/TC19.log",
+    "Command": "cbmc \"E:\\Testter\\BAOCAOTESTNEW\\CBMC_QA\\CBMC_QA_Auto_Project\\tests\\tc19_unsafe_copy_overflow.c\" \"E:\\Testter\\BAOCAOTESTNEW\\CBMC_QA\\CBMC_QA_Auto_Project\\src\\string_utils.c\" \"--bounds-check\" \"--pointer-check\" \"--unwind\" \"64\" \"--trace\"",
+    "Ghi chú": "Ca lỗi có chủ đích: copy vượt biên.",
+    "Phân tích": "Ca defect demo: công cụ bắt đúng lỗi nên testcase vẫn được ghi nhận là Fail ở góc nhìn QA"
+  }
+]

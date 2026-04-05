@@ -1,0 +1,15 @@
+{
+  "name": "cbmc-buffer-overflow-qa-automation",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Project QA + Automation cho de tai dung CBMC kiem chung buffer overflow cho ham xu ly chuoi trong C",
+  "scripts": {
+    "doctor": "node automation/scripts/doctor.js",
+    "test": "node automation/scripts/run-cbmc.js",
+    "test:all": "node automation/scripts/run-cbmc.js",
+    "test:dry": "node automation/scripts/run-cbmc.js --dry-run"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

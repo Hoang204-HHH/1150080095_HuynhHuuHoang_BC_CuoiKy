@@ -1,0 +1,5 @@
+﻿Loại coverage,Mục tiêu,Ghi chú
+Statement coverage,"Bao phủ các câu lệnh chính của safe_str_copy, safe_str_concat, unsafe_str_copy, buggy_copy_off_by_one, unsafe_str_concat",Thiết kế suite đạt 100% cho các nhánh/chức năng mục tiêu.
+Branch / Decision coverage,"Bao phủ nhánh normal, truncation, invalid input, dst đầy, dst không hợp lệ",Theo thiết kế đạt 100% outcome cho nhóm safe_*.
+Path coverage,Minh họa các đường đi quan trọng chứ không tuyên bố 100% mọi đường đi,Được kiểm soát bằng suite 22 testcase.
+Function coverage,Tất cả hàm trong string_utils.c đều được chạm tới,"safe_str_copy, safe_str_concat, unsafe_strlen, unsafe_str_copy, unsafe_str_concat, buggy_copy_off_by_one, no_null_terminate_copy"

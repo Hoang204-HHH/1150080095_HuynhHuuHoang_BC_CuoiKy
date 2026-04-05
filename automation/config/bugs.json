@@ -1,0 +1,38 @@
+[
+  {
+    "Bug ID": "BUG-001",
+    "Tiêu đề": "unsafe_str_copy ghi vượt biên khi src dài hơn dst",
+    "Module": "string_utils.c::unsafe_str_copy",
+    "Severity": "Critical",
+    "Priority": "High",
+    "Bước tái hiện": "Chạy TC19 với --bounds-check",
+    "Kết quả mong đợi": "CBMC phát hiện out-of-bounds write",
+    "Kết quả thực tế": "VERIFICATION FAILED",
+    "Trạng thái": "Open / Known defect demo",
+    "Testcase liên quan": "TC19"
+  },
+  {
+    "Bug ID": "BUG-002",
+    "Tiêu đề": "buggy_copy_off_by_one ghi vào dst[dst_size]",
+    "Module": "string_utils.c::buggy_copy_off_by_one",
+    "Severity": "Critical",
+    "Priority": "High",
+    "Bước tái hiện": "Chạy TC20 với --bounds-check",
+    "Kết quả mong đợi": "CBMC phát hiện write vượt 1 byte ngoài buffer",
+    "Kết quả thực tế": "VERIFICATION FAILED",
+    "Trạng thái": "Open / Known defect demo",
+    "Testcase liên quan": "TC20"
+  },
+  {
+    "Bug ID": "BUG-003",
+    "Tiêu đề": "unsafe_str_concat ghi vượt biên khi dst gần đầy",
+    "Module": "string_utils.c::unsafe_str_concat",
+    "Severity": "Critical",
+    "Priority": "High",
+    "Bước tái hiện": "Chạy TC22 với --bounds-check",
+    "Kết quả mong đợi": "CBMC phát hiện out-of-bounds write",
+    "Kết quả thực tế": "VERIFICATION FAILED",
+    "Trạng thái": "Open / Known defect demo",
+    "Testcase liên quan": "TC22"
+  }
+]

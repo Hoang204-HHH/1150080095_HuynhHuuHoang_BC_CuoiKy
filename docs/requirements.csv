@@ -1,0 +1,7 @@
+﻿Req ID,Mô tả,Loại,Mức ưu tiên
+REQ-01,safe_str_copy không ghi ngoài biên với input hợp lệ.,Functional/Safety,Cao
+REQ-02,safe_str_copy luôn null-terminate khi dst_size > 0 và input hợp lệ.,Functional/Safety,Cao
+REQ-03,safe_str_concat không ghi ngoài biên và phát hiện dst không hợp lệ.,Functional/Safety,Cao
+REQ-04,Các input NULL hoặc dst_size = 0 phải bị từ chối bằng mã -1.,Negative,Cao
+REQ-05,Luồng copy rồi concat phải giữ tính đúng đắn dữ liệu.,Integration,Trung bình
+REQ-06,Project phải có đúng 3 ca defect demo để minh họa buffer overflow.,Reporting/Teaching,Cao

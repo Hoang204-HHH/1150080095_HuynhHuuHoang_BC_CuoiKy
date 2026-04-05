@@ -1,0 +1,7 @@
+﻿Req ID,Mô tả yêu cầu,Test Cases liên kết,Trạng thái mục tiêu
+REQ-01,safe_str_copy không ghi ngoài biên,"TC01, TC02, TC03, TC04, TC05",Pass
+REQ-02,safe_str_copy luôn null-terminate,"TC01, TC02, TC03, TC04, TC05",Pass
+REQ-03,safe_str_concat an toàn và xử lý dst không hợp lệ,"TC09, TC10, TC11, TC12, TC13, TC14",Pass
+REQ-04,Input NULL hoặc dst_size = 0 phải trả -1,"TC06, TC07, TC08, TC15, TC16, TC17",Pass
+REQ-05,Luồng tích hợp copy rồi concat đúng,TC18,Pass
+REQ-06,Có đúng 3 ca defect demo,"TC19, TC20, TC22",Fail (có chủ đích)

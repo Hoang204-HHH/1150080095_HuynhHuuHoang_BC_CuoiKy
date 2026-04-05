@@ -1,0 +1,4 @@
+﻿Bug ID,Tiêu đề,Module,Severity,Priority,Bước tái hiện,Kết quả mong đợi,Kết quả thực tế,Trạng thái,Testcase liên quan,Kết quả chạy testcase liên quan,Link log
+BUG-001,unsafe_str_copy ghi vượt biên khi src dài hơn dst,string_utils.c::unsafe_str_copy,Critical,High,Chạy TC19 với --bounds-check,CBMC phát hiện out-of-bounds write,VERIFICATION FAILED,Open / Known defect demo,TC19,TC19: VERIFICATION FAILED,output/logs/TC19.log
+BUG-002,buggy_copy_off_by_one ghi vào dst[dst_size],string_utils.c::buggy_copy_off_by_one,Critical,High,Chạy TC20 với --bounds-check,CBMC phát hiện write vượt 1 byte ngoài buffer,VERIFICATION FAILED,Open / Known defect demo,TC20,Chưa chạy,
+BUG-003,unsafe_str_concat ghi vượt biên khi dst gần đầy,string_utils.c::unsafe_str_concat,Critical,High,Chạy TC22 với --bounds-check,CBMC phát hiện out-of-bounds write,VERIFICATION FAILED,Open / Known defect demo,TC22,Chưa chạy,
