@@ -1,9 +1,7 @@
-# CBMC QA Automation Project v3
+# CBMC Project
 
 Đề tài: **Dùng CBMC kiểm chứng buffer overflow cho hàm xử lý chuỗi trong C**
 
-## Mục tiêu của bản v3
-Bản v3 đã sửa các vấn đề của bản trước và chuẩn hóa suite theo mục tiêu báo cáo:
 
 - **22 testcase**
 - **19 testcase Pass**
