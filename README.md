@@ -51,7 +51,7 @@ Lưu ý:
 - 3 ca Fail này là **bug demo**, không phải lỗi của harness.
 - Nếu CBMC báo đúng `VERIFICATION FAILED` cho 3 ca đó thì suite đang vận hành đúng.
 
-## Kiểm tra nội bộ đã thực hiện trước khi bàn giao
+## Kiểm tra
 Trong môi trường dựng project:
 - Đã kiểm tra sự tồn tại đầy đủ của harness/source/config
 - Đã kiểm tra đúng **22 testcase**
